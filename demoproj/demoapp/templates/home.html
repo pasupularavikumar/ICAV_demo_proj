@@ -1,0 +1,76 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block title %}HOME{% endblock title %}
+ 
+{% block content %}
+ 
+<div class="table1">
+
+  <div class="row border-bottom text-uppercase">
+    <div class="col-md-10">     
+        <h6><a class="active" href="">Home</a> </h6>
+   
+    </div>
+    
+    <div class="col-md-2 ">
+      <a href="/book_api/" class=" btn btn-primary btn-right text-uppercase">Books API</a>
+      <a href="/addbook/" class=" btn btn-primary btn-right text-uppercase">Add New BOOK</a>
+    </div>
+
+  </div>
+ 
+ 
+ 
+  <div class="table-responsive mytable1">
+    <table id="mytable" class="table table-striped bg-white rounded shadow-sm  table-hover" style="width:100%">
+      <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">TITLE</th>
+                    <th scope="col">AUTHOR</th>
+                    <th scope="col">AUTHORS</th>
+                    <th scope="col">ISBN13</th>      
+                    <th scope="col">ISBN10</th>      
+                    <th scope="col">PRICE</th>
+                    <th scope="col">PUBLISHER</th>
+                    <th scope="col">PUBLISH YEAR</th>
+                    <th scope="col">SUBJECTS</th>
+                    <th scope="col">LEXILE</th>
+                    <th scope="col">PAGES</th>
+                    <th scope="col">DIMENSIONS</th>
+                    <th scope="col">UPDATE</th>
+                      
+         
+                     
+                  </tr>
+             </thead>
+   <tbody>
+   {% for i in books %}  
+    <tr>
+     <td>{{ i.id}}</td>  
+     <td>{{ i.title}}</td>  
+     <td>{{ i.author}}</td>  
+     <td>{{ i.authors}}</td>  
+     <td>{{ i.isbn13}}</td>  
+     <td>{{ i.isbn10}}</td>  
+     <td>{{ i.price}}</td>  
+     <td>{{ i.publisher}}</td>  
+     <td>{{ i.pubyear}}</td>  
+     <td>{{ i.subjects}}</td>  
+     <td>{{ i.lexile}}</td>  
+     <td>{{ i.pages}}</td>  
+     <td>{{ i.dimensions}}</td> 
+     <td><a href="/updatebook/{{i.id}}/" class="btn edit_btn btn-outline-success btn-xs"  ><i class="fa fa-pencil" aria-hidden="true"></i></a></td>       
+         
+   {% endfor %} 
+   </tbody>         
+  </table>
+</div>
+
+</div>    
+ 
+   
+{% endblock content %}
+
+ 
